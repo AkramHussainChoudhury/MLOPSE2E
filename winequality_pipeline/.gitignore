@@ -1,0 +1,5 @@
+venv/
+artifacts/
+logs/
+src/datascience/pipeline/__pycache__/
+src/datascience/components/__pycache__/
