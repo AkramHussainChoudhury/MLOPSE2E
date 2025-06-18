@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Personal/projects/MLOps/MLOPSE2E/mlruns/0/241cf4cda42943bba51b464de014a116/artifacts
+end_time: 1750205134656
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 241cf4cda42943bba51b464de014a116
+run_name: resilient-wren-493
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750205126312
+status: 3
+tags: []
+user_id: '91703'

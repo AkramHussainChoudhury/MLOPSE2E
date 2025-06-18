@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Personal/projects/MLOps/MLOPSE2E/mlruns/0/models/m-a364a8066160471d8efc0257c6410618/artifacts
+creation_timestamp: 1750205126498
+experiment_id: '0'
+last_updated_timestamp: 1750205134642
+model_id: m-a364a8066160471d8efc0257c6410618
+model_type: null
+name: model
+source_run_id: 241cf4cda42943bba51b464de014a116
+status: 2
+status_message: null
