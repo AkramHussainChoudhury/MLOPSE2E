@@ -16,7 +16,7 @@ from networksecurity.logging.logger import logging
 
 MONGO_DB_URL=os.getenv("MONGO_DB_URL")
 
-class DatIngestion:
+class DataIngestion:
     def __init__(self,data_ingestion_config:DataIngestionConfig):
         self.data_ingestion_config=data_ingestion_config
 
