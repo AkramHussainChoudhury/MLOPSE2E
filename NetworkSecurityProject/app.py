@@ -8,6 +8,7 @@ from networksecurity.exception.exception import CustomException
 from networksecurity.pipeline.training_pipeline import TrainingPipeline
 from networksecurity.utils.mainutils import load_object
 from networksecurity.utils.mlutils import NetworkModel
+from uvicorn import run as app_run
 
 app=FastAPI()
 origins=["*"]
@@ -58,4 +59,7 @@ async def rpedict_route(request: Request,file: UploadFile=File(...)):
         CustomException(sys,e)
 
 
+
+if __name__=="__main__":
+    app_run(app,host="0.0.0.0",port=8000)
 
