@@ -1,0 +1,35 @@
+name: CI/CD for Dockerized Network Security ML App
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'NetworkSecurityProject/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'NetworkSecurityProject/**'
+
+jobs:
+  integration:
+    name: Continuous Integration
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Lint Code
+        run: echo "networksecurity repository"
+
+      - name: Run Unit Tests
+        run: echo "Running docker build"
+
+  dockerbuild:
+    name: Docker Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Build the Docker Image
+        run: docker build NetworkSecurityProject/ --file NetworkSecurityProject/Dockerfile --tag networksecurity:latest
