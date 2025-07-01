@@ -7,6 +7,7 @@ COPY . /app
 
 RUN pip install -r requirements.txt
 
+
 # Make port 5000 available to the world outside this container
 EXPOSE 8000
 
