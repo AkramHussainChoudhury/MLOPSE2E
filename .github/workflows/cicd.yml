@@ -56,7 +56,7 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         context: .
-        file: NetworkSecurityProject/DockerFile
+        file: NetworkSecurityProject/Dockerfile
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/networksecurity:latest
 
