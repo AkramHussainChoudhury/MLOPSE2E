@@ -4,11 +4,11 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'NetworkSecurityProject/**'
+      - 'winequality_pipeline/**'
   pull_request:
     branches: [ main ]
     paths:
-      - 'NetworkSecurityProject/**'
+      - 'winequality_pipeline/**'
 
 jobs:
   integration:
@@ -24,19 +24,9 @@ jobs:
       - name: Run Unit Tests
         run: echo "Running docker build"
 
-  dockerbuild:
-    name: Docker Build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Build the Docker Image
-        run: docker build NetworkSecurityProject/ --file NetworkSecurityProject/Dockerfile --tag networksecurity:latest
-
 
   build-and-publish:
-    needs: dockerbuild
+    needs: integration
     runs-on: ubuntu-latest
 
     steps:
@@ -55,10 +45,14 @@ jobs:
     - name: Build and push Docker image
       uses: docker/build-push-action@v4
       with:
-        context: NetworkSecurityProject/
-        file: NetworkSecurityProject/Dockerfile
+        context: winequality_pipeline/
+        file: winequality_pipeline/Dockerfile
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/networksecurity:latest
+        tags: ${{ secrets.DOCKER_USERNAME }}/winequality_pipeline:latest
 
     - name: Image digest
       run: echo ${{ steps.build-and-publish.outputs.digest }}
+
+
+
+ 
